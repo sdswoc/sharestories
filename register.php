@@ -1,22 +1,5 @@
-<?php
-include 'init.php';
-if (empty($_post)===false)
-{ $required_fields=array('username','password','email');
-  foreach($_POST as $_key=>$_value)
-  {if (empty($_value) && in_array($_key,$_post)===true)
-	  {$errors[]='required field';
-		break 1;}
-		if (empty($errors)===true)
-		{ if (userexist($_POST['username']))
-			{ $errors[]='this username is already taken';}
-		if(strlen($_POST['password'])<6)
-		{ $errors[]='password too short';}
-		if($_POST['password']!==$_POST['password_again'])
-		{$errors[]='password doesnot match';}		
- ?>
 
 <!DOCTYPE html>
-<html>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
@@ -90,25 +73,11 @@ button:hover {
 </style>
 <body>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="action_page.php" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
-<?php
-if(empty($_error)==true&&empty($_POST)==false)
-{    $register_data=array(
-		'username'=>$_POST['username'],
-        'password'=>$_POST['password'],
-         'email'=>$_POST['email']);
-register_user($register_data);
-header("location: login2.php");
-exit();
-}
 
-elseif (empty($errors)==false)
-{print_r($errors);
-}
-?>
     <hr>
 	<label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -127,7 +96,7 @@ elseif (empty($errors)==false)
     
     <button type="submit" class="signupbtn">Sign Up</button>
     </div>
-  </div>
+
 </form>
 
 </body>

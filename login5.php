@@ -81,8 +81,9 @@ span.psw {
     <input type="password" placeholder="Enter Password" name="password" required><br>
 
     <button type="submit">Login</button><br>
-    <label> Don't have an account?
-      <a href= register.php> Register </a>
+    <label>
+      <a href= register.php> Register </a><br> <br>
+	  User has been registered. Please login to continue.
     </label>
   </div>
 
