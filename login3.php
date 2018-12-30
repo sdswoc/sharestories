@@ -12,6 +12,7 @@ if($rs=mysqli_fetch_array($z))
 {
 $_SESSION['username']=$username;
 header('Location: main.php');
+mysqli_query($x," UPDATE activestatus set active='y' where username='$username'");
 }
 else{
 	header('Location: login4.php');

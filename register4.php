@@ -68,7 +68,7 @@ form {
     <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
 	<br>
     <input type="submit" value="Submit">
-
+	<h4> Passwords don't match </h4>
   </form>
 </div>
 </center>

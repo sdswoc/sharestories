@@ -47,7 +47,7 @@ form {
   width : 60%;
 }
 </style>
-<body bgcolor= #EFEFEF>
+<body bgcolor= #A9A9A9>
 <div class="header" id="myHeader"><center><img src="trlogo.png"  height=130></center>
 </div>
 <br><br><br>
@@ -55,20 +55,16 @@ form {
 
 
 <div class="form">
-<h1>Sign up</h1>
-  <form action="action_page.php">
-    <label for="uname"></label>
-    <input type="text" id="uname" name="username" placeholder="Username" required>
-<br>
-    <label for="lname"></label>
-    <input type="text" id="email" name="email" placeholder="Valid E-mail ID" required>
-<br>
-    <input type="password" id="password" name="password" placeholder="Enter Password" required>
+<h1>Change your password</h1>
+  <form action="pchange.php">
+	<input type="password" id="currentpassword" name="currentpassword" placeholder="Enter Current Password" required>
+	<br>
+    <input type="password" id="newpassword" name="newpassword" placeholder="Enter New Password" required>
   <br>
-    <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm new Password" required>
 	<br>
     <input type="submit" value="Submit">
-
+	<h4> Current password is incorrect</h4>
   </form>
 </div>
 </center>

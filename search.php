@@ -57,9 +57,6 @@ body {
   cursor: pointer;
 }
 
-.topnav .search-container button:hover {
-  background: #ccc;
-}
 
 @media screen and (max-width: 600px) {
   .topnav .search-container {
@@ -68,8 +65,8 @@ body {
   .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
-    text-align: left;
-    width: 100%;
+    text-align: right;
+    width: 20%;
     margin: 0;
     padding: 14px;
   }
@@ -82,7 +79,6 @@ body {
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
   <div class="search-container">
     <form action="friendprofile.php">
       <input type="text" placeholder="Search other users" name="friend">

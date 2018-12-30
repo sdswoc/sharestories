@@ -8,6 +8,7 @@ $title=$_REQUEST['n'];
 if($db)
 {
 	mysqli_query($db,"INSERT INTO story VALUES (NULL, '$user','$story',now(),'$title')");
+	header('Location:main.php');
 	
 }
 ?>

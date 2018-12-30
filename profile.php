@@ -46,6 +46,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
  $query="update profile2 set image='$url' where username='$user'";
  if($upl=$db->query($query)){
 echo "<br/>Saved to Database successfully";
+header('location:main.php');
  }
  }
  }
@@ -53,7 +54,6 @@ echo "<br/>Saved to Database successfully";
  echo "File Size Limit Crossed 200 KB Use Picture Size less than 200 KB";
 }
 }
-
 
 
 

@@ -1,13 +1,12 @@
 <?php
-$username=$_REQUEST['username'];
+$username=test_input($_REQUEST['username']);
 $password=$_REQUEST['password'];
 $password2=$_REQUEST['password_again'];
-$email=$_REQUEST['email'];
+$email=test_input($_REQUEST['email']);
 $x=mysqli_connect("localhost","root","","usershare");
 $query=mysqli_query($x,"SELECT username from profile2 where username='$username'");
 if($rs=mysqli_fetch_array($query))
 {
-	echo 'ok';
 	header('Location: register2.php');
 }
 else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -17,9 +16,18 @@ else{
 if($password==$password2)	
 {
 	mysqli_query($x,"INSERT INTO `profile2` VALUES (NULL, '$username','$email','$password','')");
+	mysqli_query($x,"INSERT INTO `activestatus` VALUES ('$username', 'n')");
 	header('Location: login5.php');
 } 
 else
-{echo "Your passwords don\'t match"; }}
+{
+ header('Location: register4.php');
+}}
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 ?>

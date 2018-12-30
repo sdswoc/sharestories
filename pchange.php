@@ -13,11 +13,12 @@ if($rs[0]==$curr_password)
 		if($newpassword==$confirmpassword)
 		{	 $query="UPDATE profile2 SET password='$newpassword' where username='$user'";
 				if($upl=$x->query($query)){
-		echo "<br/>Password updated";}}
+		echo "<br/>Password updated";
+		header("Location:main.php");}}
 		else
-{echo "Passwords don't match!";}}
+{header("Location:changepassword2.php");}}
 else
-{echo "Your current password is not right";
+{header("Location:changepassword3.php");
 }
 
 					
