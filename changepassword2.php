@@ -64,7 +64,7 @@ form {
     <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm new Password">
 	<br>
     <input type="submit" value="Submit">
-	<h4> New Password and confirm password don't match</h4>
+	<h4> New Password and confirmpassword don't match</h4>
   </form>
 </div>
 </center>

@@ -65,7 +65,7 @@ form {
 <br>
     <input type="password" id="password" name="password" placeholder="Enter Password" required>
   <br>
-    <input type="password" id="password2" name="password2" placeholder="Confirm Password" required>
+    <input type="password" id="password_again" name="password_again" placeholder="Confirm Password" required>
 	<br>
     <input type="submit" value="Submit">
 	<h4> Username already exists please use other username </h4>
