@@ -1,17 +1,22 @@
 <?php
-include'init.php';
-if(empty($_post)===false)
-{	$username=$_post['username'];
-	$password=$_post['password'];}
-	if(empty($username)===true||empty($password)===true)
-	{$errors[]='U need to enter a password or a username';}
-	elseif(userexist($username)===false)
-	{$errors[]='Wecant find this user';}
-	else 
-	{
-		$login=login($username,$password)
-			if($login===false)
-			{$errors[]='Username password combination is incorrect';}
-	else {echo 'okay'}}
-print_r($errors);
+session_start();
+$username=$_REQUEST['username'];
+$password=$_REQUEST['password'];
+echo $username;
+echo $password;
+$x=mysqli_connect("localhost","root","","usershare");
+if($x)
+{
+$z=mysqli_query($x,"SELECT 1 from `profile2` where username='$username' and password='$password'");
+if($rs=mysqli_fetch_array($z))
+{
+$_SESSION['username']=$username;
+header('Location: main.php');
+mysqli_query($x," UPDATE activestatus set active='y' where username='$username'");
+}
+else{
+	header('Location: login4.php');
+}
+}
+
 ?>
